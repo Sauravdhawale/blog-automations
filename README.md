@@ -65,6 +65,6 @@ Local development must not be exposed directly to the public internet: Sites nor
 
 ## Verification
 
-`tests/integration.mjs` exercises the local API using explicit test identities. It is only for a disposable local preview database. It tests authentication, role isolation, draft persistence, duplicate protection, approval invalidation, publication blocking, and schedule behavior. Never run it against production.
+Run `node --experimental-vm-modules tests/integration.mjs`. The offline harness executes the actual API handlers with a real in-memory SQLite database, simulated platform identity, and simulated object storage. It tests authentication, role isolation, draft persistence, duplicate protection, approval invalidation, publication blocking, credential encryption, image signatures, and schedule behavior. No real website is contacted. Never point the optional HTTP test mode at production.
 
 See `docs/VERIFICATION.md` for the verification performed for this delivery.
